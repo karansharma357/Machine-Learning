@@ -10,6 +10,7 @@ Created on Sun Jun 10 22:19:54 2018
 # Importing the libraries
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
 
 # Importing the dataset
 dataset = pd.read_csv('Salary_Data.csv')
@@ -35,7 +36,28 @@ regressor.fit(X_train, y_train)
 
 # Predicting the Test set results
 y_pred = regressor.predict(X_test)
-regressor.summary()
+
+
+'''To find P value, R^2 value and adjusted r^2 value (summary)'''
+import statsmodels.formula.api as sm
+
+'''in this method intercept value gets added automatically'''
+## use this line or below line, both are same: model = sm.ols(formula='y ~ X ', data=dataset)
+
+model = sm.ols(formula='Salary ~ YearsExperience ', data=dataset)
+fitted1 = model.fit()
+fitted1.summary()
+
+'''in this method intercept value is not present so it shows more r^2 value and adjusted r^2 value'''
+X_opt = X[:, [0,1]]
+regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
+regressor_OLS.summary()
+
+'''in this method we are adding intercept(c) value manually, by adding 1st column with entry 1 in all rows '''
+X = np.append(arr = np.ones((30, 1)).astype(int), values = X, axis = 1)
+X_opt = X[:, [0,1]]
+regressor_OLS = sm.OLS(endog = y, exog = X_opt).fit()
+regressor_OLS.summary()
 
 # Visualising the Training set results
 plt.scatter(X_train, y_train, color = 'red')
