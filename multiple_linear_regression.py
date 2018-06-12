@@ -8,6 +8,7 @@ Created on Tue Jun 11 18:08:57 2018
 # Multiple Linear Regression
 
 # Importing the libraries
+import matplotlib.pyplot as plt
 import pandas as pd
 # Importing the dataset
 dataset = pd.read_csv('50_Startups.csv')
@@ -43,3 +44,34 @@ regressor.fit(X_train, y_train)
 
 # Predicting the Test set results
 y_pred = regressor.predict(X_test)
+
+#testing
+plt.scatter(X_test[:,2], y_test, color = 'red')
+plt.plot(X_test[:,2], y_pred, color = 'blue')
+plt.title('Profit calculator w.r.t R&D Spend')
+plt.xlabel('Money Spent in R&D')
+plt.ylabel('Profit')
+plt.show()
+
+
+#training
+plt.scatter(X[:,2], y, color = 'red')
+plt.plot(X[:,2], regressor.predict(X), color = 'blue')
+plt.title('Profit calculator w.r.t R&D Spend')
+plt.xlabel('Money Spent')
+plt.ylabel('Profit')
+plt.show()
+
+plt.scatter(X[:,3], y, color = 'red')
+plt.plot(X[:,3], regressor.predict(X), color = 'blue')
+plt.title('Profit calculator w.r.t Administration')
+plt.xlabel('Money Spent')
+plt.ylabel('Profit')
+plt.show()
+
+plt.scatter(X[:,4], y, color = 'red')
+plt.plot(X[:,4], regressor.predict(X), color = 'blue')
+plt.title('Profit calculator w.r.t Marketing Spend')
+plt.xlabel('Money Spent')
+plt.ylabel('Profit')
+plt.show()
