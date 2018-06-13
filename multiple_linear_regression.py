@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Jun 11 18:08:57 2018
+Created on Mon Jun 11 18:08:57 2018
 
 @author: Karan Sharma
 """
@@ -74,4 +74,15 @@ plt.plot(X[:,4], regressor.predict(X), color = 'blue')
 plt.title('Profit calculator w.r.t Marketing Spend')
 plt.xlabel('Money Spent')
 plt.ylabel('Profit')
+plt.show()
+
+
+
+'''Histograms'''
+dataset.hist()
+plt.show()
+
+from pandas.tools.plotting import scatter_matrix
+'''Scatter matrix: n*n, n is name of columns/attribute'''
+scatter_matrix(dataset)
 plt.show()

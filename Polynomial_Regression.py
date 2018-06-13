@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Jun 12 10:59:05 2018
+Created on Tue Jun 12 10:59:05 2018
 
 @author: Karan Sharma
 """
@@ -73,3 +73,15 @@ lin_reg.predict(6.5)
 
 # Predicting a new result with Polynomial Regression
 lin_reg_2.predict(poly_reg.fit_transform(6.5))
+
+
+
+
+'''Histograms'''
+dataset.hist()
+plt.show()
+
+from pandas.tools.plotting import scatter_matrix
+'''Scatter matrix: n*n, n is name of columns/attribute'''
+scatter_matrix(dataset)
+plt.show()
