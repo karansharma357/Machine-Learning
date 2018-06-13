@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Tue Jun 13 16:34:32 2018
+Created on Tue Jun 12 23:34:32 2018
 
 @author: Karan Sharma
 """
@@ -9,7 +9,6 @@ Created on Tue Jun 13 16:34:32 2018
 
 # Importing the libraries
 import numpy as np
-import matplotlib.pyplot as plt
 import pandas as pd
 
 # Importing the dataset
