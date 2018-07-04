@@ -1,0 +1,17 @@
+#In Python 2, the objects zip and range did behave as you were suggesting, returning lists.
+#They were changed to generator-like objects which produce the elements on demand rather than expand an entire list into memory.
+#One advantage was greater efficiency in their typical use-cases (e.g. iterating over them).
+
+#The "lazy" versions also exist in Python 2.x, but they have different names i.e. xrange and itertools.izip.
+
+#To retrieve all the output at once into a familiar list object, you may simply call list to iterate and consume the contents:
+
+list(range(3))
+#output : [0, 1, 2]
+
+list(zip(range(3), 'abc'))
+#output : [(0, 'a'), (1, 'b'), (2, 'c')]
+
+zip('abc', 'abc')
+list(y) # y is a generator
+#output : [('a', 'a'), ('b', 'b'), ('c', 'c')]
